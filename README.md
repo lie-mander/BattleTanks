@@ -7,3 +7,4 @@
 
 # Вступление
 * BT01 Game Design Document
+* BT02 Создание репозитория
