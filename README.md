@@ -9,3 +9,4 @@
 * BT01 Game Design Document
 * BT02 Создание репозитория
 * BT03 Синхронизация с GitHub Desktop
+* BT04 Создание проекта, первый ландшафт
