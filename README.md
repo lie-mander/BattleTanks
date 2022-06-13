@@ -8,3 +8,4 @@
 # Вступление
 * BT01 Game Design Document
 * BT02 Создание репозитория
+* BT03 Синхронизация с GitHub Desktop
