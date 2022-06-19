@@ -33,9 +33,8 @@ void ATankPlayerController::AimTowardsCrosshair()
 	FVector HitLocation; // Внешний параметр
 	if (GetSightRayHitLocation(HitLocation))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *HitLocation.ToString());
-		UE_LOG(LogTemp, Warning, TEXT("1"));
 		// TODO Контролируемый танк наводил прицел на точку
+		GetControlledTank()->AimAt(HitLocation);
 	}
 }
 

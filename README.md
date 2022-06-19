@@ -17,3 +17,4 @@
 * BT09 Меню, прицел (109-111)
 * BT10 AI
 * BT11 Положение прицела +LineTraceByChanel 
+* BT12 Работа с Aim + Fix Mesh Collision
