@@ -38,7 +38,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 	}
 }
 
-bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
+bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) const
 {
 	// Находим положение прицела
 	int32 ViewportSizeX, ViewportSizeY;
@@ -48,7 +48,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 	FVector CameraLookDirection;
 	if (GetLookDirection(ScreenLocation, CameraLookDirection))
 	{
-		GetLookVectorHitLocation(CameraLookDirection, HitLocation);
+		GetLookVectorHitLocation(CameraLookDirection, OutHitLocation);
 	}
 
 	return true;
