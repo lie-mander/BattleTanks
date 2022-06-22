@@ -19,3 +19,4 @@
 * BT11 Положение прицела +LineTraceByChanel 
 * BT12 Работа с Aim + Fix Mesh Collision
 * BT13 UTankBarret + Fix Mesh Components (PERFECTLY WORKING!)
+* BT14 Предварительное объявление (133)
