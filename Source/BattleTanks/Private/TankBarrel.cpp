@@ -3,7 +3,7 @@
 
 #include "TankBarrel.h"
 
-void UTankBarrel::Elevate(float RelativeSpeed)
+void UTankBarrel::BarrelElevate(float RelativeSpeed)
 {
 	// Двигаем пушки на верный объём в этом кадре
 	// С данной максильной скоросью подъёма и время кадра
