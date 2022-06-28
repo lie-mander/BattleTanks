@@ -20,4 +20,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Input)
 	void SetThrottle(float Throttle);
 	
+	// Максимальная сила на гусеницы в Ньютонах
+	UPROPERTY(EditDefaultsOnly)
+	float TrackMaxDrivindForce = 400000; // 40 тонн * 10 м/с^2
 };
