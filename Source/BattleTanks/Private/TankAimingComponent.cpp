@@ -3,6 +3,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "TankTurret.h"
 #include "TankBarrel.h"
+#include "TankTrack.h"
 #include "TankAimingComponent.h"
 
 // Sets default values for this component's properties
@@ -53,6 +54,12 @@ void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
 {
 	if (!TurretToSet) { return; }
 	Turret = TurretToSet;
+}
+
+void UTankAimingComponent::SetTrackReference(UTankTrack* TrackToSet)
+{
+	if (!TrackToSet) { return; }
+	Track = TrackToSet;
 }
 
 void UTankAimingComponent::MoveTurretAndBarrelTowards(FVector AimDirection)
