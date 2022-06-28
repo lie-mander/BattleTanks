@@ -40,11 +40,6 @@ void ATank::SetTurretReference(UTankTurret* TurretToSet)
 	TankAimingComponent->SetTurretReference(TurretToSet);
 }
 
-void ATank::SetTrackReference(UTankTrack* TrackToSet)
-{
-	TankAimingComponent->SetTrackReference(TrackToSet);
-}
-
 void ATank::AimAt(FVector HitLocation)
 {
 	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);

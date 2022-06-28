@@ -29,8 +29,6 @@ void AProjectile::Tick(float DeltaTime)
 
 void AProjectile::LaunchProjectile(float Speed)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Fire %f"), Speed);
-
 	// ”становка векторной скорости в локальном пространстве
 	// «а основу берЄм вектор самого снар€да, так как он равен вектору сокета ствола
 	// ”множаем его на скорость, так как, изначально он равен 1
