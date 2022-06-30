@@ -22,5 +22,5 @@ public:
 	
 	// Максимальная сила на гусеницы в Ньютонах
 	UPROPERTY(EditDefaultsOnly)
-	float TrackMaxDrivindForce = 400000; // 40 тонн * 10 м/с^2
+	float TrackMaxDrivindForce = 20000000; // 40 тонн * 10 м/с^2
 };
