@@ -31,6 +31,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Input)
 	void Initialise(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet);
 
+	// TODO проверить нужно ли делать публичным
+	virtual void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
+
 private:
 
 	UTankTrack* LeftTrack = nullptr;

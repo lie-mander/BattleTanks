@@ -12,13 +12,14 @@ void ATankAIController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// TODO Двигаться к игроку
-
 	auto AIPawn = Cast<ATank>(GetPawn());
 	auto PlayerPawn = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 
 	if (AIPawn && PlayerPawn)
 	{
+		// Двигаться к игроку
+		MoveToActor(PlayerPawn, AcceptanceRadius); // TODO Проверить в чём измеряется расстояние
+
 		// Целимся в игрока
 		AIPawn->AimAt(PlayerPawn->GetActorLocation());
 
