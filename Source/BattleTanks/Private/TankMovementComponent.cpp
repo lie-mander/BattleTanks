@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Liemander INC
 
 
 #include "TankMovementComponent.h"
@@ -6,11 +6,8 @@
 
 void UTankMovementComponent::Initialise(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet)
 {
-	
 	LeftTrack = LeftTrackToSet;
 	RightTrack = RightTrackToSet;
-
-	//TODO устранить удваивание скоростей
 }
 
 void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed)
@@ -23,6 +20,9 @@ void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool
 
 	auto RightThrow = FVector::CrossProduct(TankFowrward, AIForwardIntention).Z;
 	IntendTurnRight(RightThrow);
+
+	auto LeftThrow = FVector::CrossProduct(AIForwardIntention, TankFowrward).Z;
+	IntendTurnLeft(LeftThrow);
 }
 
 void UTankMovementComponent::IntendMoveForwardOrBackward(float Throw)
