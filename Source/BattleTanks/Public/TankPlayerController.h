@@ -2,7 +2,6 @@
 
 #pragma once
 
-
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h" // Должен быть последним
@@ -20,13 +19,9 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
-	ATank* GetControlledTank() const;
-
 	// Начинает перемещать ствол танка так, чтобы можно было 
 	// выстрелить в место, где прицел пересекается с миром
 	void AimTowardsCrosshair();
-
-	
 
 private:
 
@@ -42,4 +37,9 @@ private:
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& CameraLookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
+
+protected:
+
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	ATank* GetControlledTank() const;
 };
