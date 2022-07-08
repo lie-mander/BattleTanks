@@ -17,7 +17,7 @@ class BATTLETANKS_API UTankTrack : public UStaticMeshComponent
 public:
 
 	// Установка значения для привода между -1 и 1
-	UFUNCTION(BlueprintCallable, Category = Input)
+	UFUNCTION(BlueprintCallable, Category = "Input")
 	void SetThrottle(float Throttle);
 	
 	// Максимальная сила на гусеницы в Ньютонах
