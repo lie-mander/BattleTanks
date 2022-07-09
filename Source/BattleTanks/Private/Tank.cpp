@@ -1,11 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Liemander INC
 
 #include "Tank.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
 #include "TankAimingComponent.h"
-#include "TankMovementComponent.h"
 
 // Sets default values
 ATank::ATank()
@@ -27,7 +25,7 @@ void ATank::BeginPlay()
 
 void ATank::AimAt(FVector HitLocation)
 {
-	if (!TankAimingComponent) { return; }
+	if (!ensure(TankAimingComponent)) { return; }
 	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
 }
 
@@ -35,7 +33,9 @@ void ATank::Fire()
 {
 	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
 
-	if (Barrel && isReloaded) {
+	if(!ensure(Barrel)) { return; }
+
+	if (isReloaded) {
 
 
 		// Спавн снаряда в сокете на стволе

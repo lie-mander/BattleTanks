@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Liemander INC
 
 #pragma once
 
@@ -14,7 +14,6 @@ class BATTLETANKS_API ATankAIController : public AAIController
 	GENERATED_BODY()
 	
 private:
-
 	// Радиус от танка игрока, на котором танк ИИ останавливается
 	float AcceptanceRadius;
 

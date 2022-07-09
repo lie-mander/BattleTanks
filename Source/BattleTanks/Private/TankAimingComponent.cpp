@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Liemander INC
 
 #include "Kismet/GameplayStatics.h"
 #include "TankTurret.h"
@@ -17,7 +17,7 @@ UTankAimingComponent::UTankAimingComponent()
 
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
-	if (!Barrel || !Turret) { return; }
+	if (!ensure(Barrel && Turret)) { return; }
 
 	FVector OutLaunchVelocity;
 	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile"));
@@ -35,7 +35,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		ESuggestProjVelocityTraceOption::DoNotTrace
 	);
 
-	if (bHaveAimSolution)
+	if (ensure(bHaveAimSolution))
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveTurretAndBarrelTowards(AimDirection);
@@ -50,7 +50,7 @@ void UTankAimingComponent::Initialise(UTankBarrel* BarrelToSet, UTankTurret* Tur
 
 void UTankAimingComponent::MoveTurretAndBarrelTowards(FVector AimDirection)
 {
-	if (!Barrel || !Turret) { return; }
+	if (!ensure(Barrel && Turret)) { return; }
 
 	// Вычислить разницу между текущим поворотом пушки и вектором AimDirection
 	auto BarrelRotation = Barrel->GetForwardVector().Rotation();

@@ -1,11 +1,22 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Liemander INC
 
 #include "Tank.h"
 #include "TankPlayerController.h"
+#include "TankAimingComponent.h"
 
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
+
+	auto AimingComponent = GetControlledTank()->FindComponentByClass<UTankAimingComponent>();
+	if (ensure(AimingComponent))
+	{ 
+		FoundAimingComponent(AimingComponent); 
+	}
+	else 
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player Controller can`t find Aiming Component at Begin Play"));
+	}
 }
 
 void ATankPlayerController::Tick(float DeltaTime)
@@ -23,10 +34,10 @@ ATank* ATankPlayerController::GetControlledTank() const
 
 void ATankPlayerController::AimTowardsCrosshair()
 {
-	if (!GetControlledTank()) { return; }
+	if (!ensure(GetControlledTank())) { return; }
 
 	FVector HitLocation; // Внешний параметр
-	if (GetSightRayHitLocation(HitLocation))
+	if (ensure(GetSightRayHitLocation(HitLocation)))
 	{
 		// TODO Контролируемый танк наводил прицел на точку
 		GetControlledTank()->AimAt(HitLocation);
@@ -41,7 +52,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 	auto ScreenLocation = FVector2D(ViewportSizeX * CrossHairXLocation, ViewportSizeY * CrossHairYLocation);
 
 	FVector CameraLookDirection;
-	if (GetLookDirection(ScreenLocation, CameraLookDirection))
+	if (ensure(GetLookDirection(ScreenLocation, CameraLookDirection)))
 	{
 		GetLookVectorHitLocation(CameraLookDirection, OutHitLocation);
 	}
@@ -66,12 +77,12 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 	FHitResult Hit;
 	auto StartLocation = PlayerCameraManager->GetCameraLocation();
 	auto EndLocation = StartLocation + (LookDirection * LineTraceRange);
-	if (GetWorld()->LineTraceSingleByChannel(
+	if (ensure(GetWorld()->LineTraceSingleByChannel(
 		Hit,
 		StartLocation,
 		EndLocation,
 		ECollisionChannel::ECC_WorldStatic)
-		) 
+		))
 	{
 		HitLocation = Hit.Location;
 		return true;

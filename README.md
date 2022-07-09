@@ -32,3 +32,4 @@
 * BT24 Первый этап complete
 * BT25 UE 5.0 + Aim_Bp
 * BT26 Режимы прицеливания + рефакторинг AimingComponent
+* BT27 ENUM + рефакторинг BP

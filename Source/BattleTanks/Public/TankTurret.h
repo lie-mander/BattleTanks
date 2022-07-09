@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Liemander INC
 
 #pragma once
 
@@ -19,7 +19,6 @@ public:
 	void TurretTurn(float RelativeSpeed);
 
 private:
-
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	float MaxDegressPerSecond = 30;
 };

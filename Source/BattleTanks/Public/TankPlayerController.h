@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Liemander INC
 
 #pragma once
 
@@ -7,6 +7,7 @@
 #include "TankPlayerController.generated.h" // Должен быть последним
 
 class ATank;
+class UTankAimingComponent;
 
 UCLASS()
 class BATTLETANKS_API ATankPlayerController : public APlayerController
@@ -14,7 +15,6 @@ class BATTLETANKS_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 	
 public:
-	
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaTime) override;
@@ -24,7 +24,6 @@ public:
 	void AimTowardsCrosshair();
 
 private:
-
 	UPROPERTY(EditDefaultsOnly)
 	float CrossHairXLocation = 0.5;
 
@@ -39,7 +38,9 @@ private:
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 
 protected:
-
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 	ATank* GetControlledTank() const;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 };

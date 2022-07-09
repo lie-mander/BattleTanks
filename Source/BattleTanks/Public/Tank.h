@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Liemander INC
 
 #pragma once
 
@@ -9,7 +9,6 @@
 class UTankBarrel;
 class UTankTurret;
 class UTankAimingComponent;
-class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -49,7 +48,4 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, Category = "AimingComponent")
 	UTankAimingComponent* TankAimingComponent = nullptr;
-
-	UPROPERTY(BlueprintReadOnly, Category = "MovementComponent")
-	UTankMovementComponent* TankMovementComponent = nullptr;
 };
