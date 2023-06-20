@@ -1,9 +1,12 @@
 # BattleTanks
-Бой танков 1 на 1 против ИИ в деревне.
+Battle tanks 1 on 1 against the AI in the village.
 
-Простая учёба, стараемся быть лучше и делать круче.
+Just learning, trying to be better and do cooler.
 
-Дай мне сил сделать это и удачи.
+Give me the strength to do this and good luck.
+
+![HighresScreenshot00001](https://github.com/lie-mander/BattleTanks/assets/43217088/00c9bc79-60c1-4dc6-981d-5736274c1bdc)
+![HighresScreenshot00000](https://github.com/lie-mander/BattleTanks/assets/43217088/0141503b-d744-4211-a6f3-631afdd7385b)
 
 # Вступление
 * BT01 Game Design Document
